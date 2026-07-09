@@ -1,0 +1,100 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1f5f9;
+  font-family: Arial, sans-serif;
+}
+
+.game-container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 400px;
+  text-align: center;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.card {
+  height: 80px;
+  background: #fa9026;
+  color: white;
+  font-size: 35px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* aspect-ratio ဆိုတာက element ရဲ့ အချိုးအစား (width : height) ကို သတ်မှတ်တာ */
+  /* square card */
+  aspect-ratio: 1/1;
+
+  font-size: 40px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.card hover {
+  /* Mouse တင်လိုက်ရင် card ကို 5% ကြီးအောင်လုပ် */
+  transform: scale(1.05);
+}
+
+.card.matched {
+  background: #64ec96;
+  cursor: default;
+}
+
+.win-box {
+  margin-top: 20px;
+  padding: 20px;
+  border-style: dashed;
+  border-color: #667eea;
+  color: black;
+  border-radius: 15px;
+  font-size: 24px;
+  animation: pop 0.5s ease;
+}
+
+.win-box p {
+  font-size: 18px;
+  margin: 8px;
+}
+
+@keyframes pop {
+
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+#restartBtn {
+
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #667eea;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+#restartBtn:hover {
+
+    background: #4f46e5;
+
+}
